@@ -1,5 +1,4 @@
-# tcc
-TCC - Controle de Estoque
+# TCC - Controle de Estoque
 
 A arquitetura utilizada para o software é a MCV.
 As tecnologias utilizadas são:
