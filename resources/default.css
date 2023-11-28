@@ -1,0 +1,525 @@
+.nf_transmitida, .verde {
+    background-color: #b8f5b8;
+}
+
+.nf_aguardando {
+    background-color: #a2e6f9;
+}
+
+.nf_cancelada, .vermelho {
+    background-color: #fdc0c0;
+}
+
+.nf_pendente {
+    background-color: #ffffff;
+}
+
+.valor1, .perc2, .desc2, .acres1 {
+    display: none;
+}
+
+.nfe-shortcut {
+    background-image: url(images/nfe.png);
+    width: 46px;
+    height: 46x;
+}
+
+.ux-desktop-shortcut {
+	-webkit-column-break-inside: avoid;
+	-moz-column-break-inside: avoid;
+	-o-column-break-inside: avoid;
+	column-break-inside: avoid;
+	display: table;
+    cursor: pointer;
+    text-align: center;
+    width: 100px;
+	padding:8px
+}
+
+.ux-desktop-shortcut-icon {
+	margin:0 auto;
+    width: 48px;
+    height: 48px;
+    background-color: transparent;
+    background-repeat: no-repeat
+}
+
+.ux-desktop-shortcut-text {
+    font: normal 12px tahoma, arial, verdana, sans-serif;
+    text-decoration: none;
+    padding-top: 5px;
+    color: #ffffff;
+	width: 100px;
+	height:30px;
+	min-height:30px;
+	text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.x-view-over .ux-desktop-shortcut-text {
+    text-decoration: underline
+}
+
+.accordion-shortcut {
+    background-image: url(images/im48x48.png)
+}
+
+.cpu-shortcut {
+    background-image: url(images/statusLarge.png)
+}
+
+.grid-shortcut {
+    background-image: url(images/grid48x48.png)
+}
+
+.notepad-shortcut {
+    background-image: url(images/notepadLarge.png);
+    width: 46px;
+    height: 46px
+}
+
+.veiculo-shortcut {
+    background-image: url(images/veiculo.png);
+    width: 46px;
+    height: 46px
+}
+
+.tag-shortcut {
+    background-image: url(images/tag.png);
+    width: 46px;
+    height: 46px
+}
+
+.list-shortcut {
+    background-image: url(images/list.png);
+    width: 50px;
+    height: 50px
+}
+
+.service-shortcut {
+    background-image: url(images/service.png);
+    width: 50px;
+    height: 50px
+}
+
+.x-ie6 .accordion-shortcut {
+    background-image: none;
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/im48x48.png', sizingMethod='scale')
+}
+
+.x-ie6 .cpu-shortcut {
+    background-image: none;
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/statusLarge.png', sizingMethod='scale')
+}
+
+.x-ie6 .grid-shortcut {
+    background-image: none;
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/grid48x48.png', sizingMethod='scale')
+}
+
+.x-ie6 .nfe-shortcut {
+    background-image: none;
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/nfe.png', sizingMethod='scale')
+}
+
+.x-ie6 .notepad-shortcut {
+    background-image: none;
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/notepadLarge.png', sizingMethod='scale')
+}
+
+.search-item {
+    position: relative;
+    z-index: 100000;
+}
+
+.icon-nfe {
+    background-image: url(images/icon-nfe-16.png) !important
+}
+
+.x-datepicker .x-datepicker-inner {
+    width: 110px !important;
+}
+
+.x-datepicker-default {
+    background-color: #f7f7f7 !important;
+    height: 210px !important;
+}
+
+.x-datepicker-date {
+    color: #157fd3 !important;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #a9a9a9;
+    margin: 0 auto;
+    text-align: center
+}
+
+.x-datepicker-disabled {
+    background-color: #bebebe !important;
+    color: #a9a9a9 !important;
+    width: 20px;
+    height: 20px;
+    margin: 0 auto;
+    text-align: center
+}
+
+.ui-datepicker-week-end{color:#f00;}
+
+.x-datepicker-week-end{
+	background-color: red !important;
+}
+
+.x-monthpicker-body {
+    height: 100% !important;
+    position: relative !important;
+    color: #000000 !important;
+    background-color: #f7f7f7 !important;
+    opacity: 0.95 !important;
+    /*width:45px;
+    float:left;*/
+    padding: 0px 7px 0px 12px !important;
+    font-weight: bold !important;
+    font-size: 11px;
+}
+
+.x-monthpicker-item :hover {
+    color: #006dc3 !important;
+    opacity: 1 !important;
+    text-decoration: none !important;
+    background-color: #cae5fb !important;
+}
+
+.x-monthpicker-item {
+    height: 16px !important;
+    width: 50px !important;
+    float: left !important;
+    display: block !important;
+}
+
+.x-monthpicker-selected {
+    background-color: #d6e8f6 !important;
+    border-color: #3892d3 !important;
+    border-style: solid !important;
+}
+
+/*x-monthpicker x-layer x-monthpicker-default x-border-box*/
+.x-monthpicker-months {
+    float: left !important;
+    width: 100px !important;
+}
+
+.x-monthpicker-years {
+    border-top: 1px solid #000000 !important;
+    padding-bottom: 5px !important;
+    float: left !important;
+    width: 100px !important;
+    opacity: 0.1 !important;
+}
+
+/*
+x-grid-row-editor-buttons x-grid-row-editor-buttons-default x-border-box x-top x-grid-row-editor-buttons-top x-grid-row-editor-buttons-default-top
+
+x-grid-row-editor-buttons x-grid-row-editor-buttons-default x-border-box x-bottom x-grid-row-editor-buttons-bottom x-grid-row-editor-buttons-default-bottom
+
+x-panel x-panel-default x-grid-editor x-grid-row-editor x-border-box
+*/
+
+.x-grid-row-editor-wrap {
+    position: absolute !important;
+    z-index: 500 !important;
+}
+
+.dataview-multisort-item {
+    float: left;
+    padding: 8px;
+    margin: 8px 8px 4px 8px;
+
+}
+
+.dataview-text {
+    display: block;
+    font-size: 1.17em;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.sort-direction-asc {
+    background-image: url(images/grid/sort_asc.png);
+    background-position: 4px center;
+}
+
+.sort-direction-desc {
+    background-image: url(images/grid/sort_desc.png);
+    background-position: 4px center;
+}
+
+.x-title-text-default:after {
+    content: '' !important;
+}
+
+.ux-start-button-icon{
+    background-image: url(images/start-icon.png) !important;
+    width: 16px !important;
+    height: 16px !important;
+}
+.icon-certificado{
+	background-image: url(images/icon-certificado.png) !important;
+    width: 16px !important;
+    height: 16px !important;
+}
+.x-tbar-page-number{
+	width:30px
+}
+.x-tbar-page-first{
+	background-image:url(images/grid/page-first.png)
+}
+.x-tbar-page-prev{
+	background-image:url(images/grid/page-prev.png)
+}
+.x-tbar-page-next{
+	background-image:url(images/grid/page-next.png)
+}
+.x-tbar-page-last{
+	background-image:url(images/grid/page-last.png);
+	display:none;
+}
+.x-tbar-loading{
+	background-image:url(images/grid/refresh.png)
+}
+.x-box-inner{
+	overflow:visible
+}
+.x-splitter{
+	font-size:1px
+}
+.x-splitter-horizontal{
+	cursor:e-resize;
+	cursor:row-resize
+}
+.x-splitter-vertical{
+	cursor:e-resize;
+	cursor:col-resize
+}
+.x-splitter-collapsed,.x-splitter-horizontal-noresize,.x-splitter-vertical-noresize{
+	cursor:default
+}
+.x-splitter-active{
+	z-index:4
+}
+.x-collapse-el{
+	position:absolute;
+	background-repeat:no-repeat
+}
+.x-box-layout-ct{
+	overflow:hidden;
+	position:relative
+}
+.x-box-target{
+	position:absolute;
+	width:20000px;
+	top:0;
+	left:0;
+	height:1px
+}
+.x-box-inner{
+	overflow:hidden;
+	position:relative;
+	left:0;
+	top:0
+}
+.x-box-scroller{
+	position:absolute;
+	background-repeat:no-repeat;
+	background-position:center;
+	line-height:0;
+	font-size:0
+}
+.x-box-scroller-top{
+	top:0
+}
+.x-box-scroller-right{
+	right:0
+}
+.x-box-scroller-bottom{
+	bottom:0
+}
+.x-box-scroller-left{
+	left:0
+}
+.x-box-menu-body-horizontal{
+	float:left
+}
+.x-box-menu-after{
+	position:relative;
+	float:left
+}
+.x-form-trigger-wrap{
+	display:table;
+	width:100%;
+	height:100%
+}
+.x-form-trigger-wrap-default{
+	border-width:1px;
+	border-style:solid;
+	border-color:#cecece
+}
+.x-field{
+	margin:0 3px 0 2px
+}
+.x-form-item{
+	display:table;
+	table-layout:fixed;
+	border-spacing:0;
+	border-collapse:separate
+}
+.x-form-item-default.x-item-disabled{
+	filter:alpha(opacity=30);
+	opacity:.3
+}
+.x-box-item{
+	position:absolute!important;
+	left:0;
+	top:0
+}
+.x-toolbar-item{
+	margin:0 8px 0 0
+}
+.x-form-item.x-form-item-no-label>.x-form-item-label{
+	display:none
+}
+.x-form-text {
+    display: inherit;
+}
+.x-btn-uploader {
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    border-radius: 3px;
+    padding: 3px 3px 3px 3px;
+    border-width: 1px;
+    border-style: solid;
+    background-color: #DEF5FF;
+    border-color: #D6F3FF;
+}
+.x-btn-over.x-btn-uploader {
+	background-color: #D6F3FF;
+}
+.x-btn-uploader-logo {
+    background-color: #3892d3;
+}
+.x-btn-uploader-logo:hover {
+    background-color: #4577BC;
+}
+.iniciar-user-icon {
+    background-image:url(images/user.gif)
+}
+.x-form-trigger-wrap-default.x-form-trigger-wrap-invalid {
+  border-color: #CECECE;
+}
+.x-accordion-item .x-accordion-hd {
+    background: #F5F5F5;
+    border-width: 1px 0 1px;
+    border-color: #CECECE #CECECE #CECECE;
+    padding: 8px 10px;
+    color: #ffffff;
+}
+.x-accordion-item .x-accordion-hd-sibling-expanded {
+    border-top-color: #CECECE;
+    border-top-width: 1px;
+}
+
+/*----------------------------------------------------------------------------------------*/
+.acesso-shortcut {
+    background-image: url(images/icon/acesso.png);
+    width: 48px;
+    height: 48px
+}
+.fornecedor-shortcut {
+    background-image: url(images/icon/fornecedor.png);
+    width: 48px;
+    height: 48px
+}
+.prontuario-shortcut {
+    background-image: url(images/icon/prontuario.png);
+    width: 48px;
+    height: 48px
+}
+.paciente-shortcut {
+    background-image: url(images/icon/paciente.png);
+    width: 48px;
+    height: 48px
+}
+.unidade-shortcut {
+    background-image: url(images/icon/unidade-medida.png);
+    width: 48px;
+    height: 48px
+}
+.lote-shortcut {
+    background-image: url(images/icon/lote.png);
+    width: 48px;
+    height: 48px
+}
+.notafiscal-shortcut {
+    background-image: url(images/icon/nota-fiscal.png);
+    width: 48px;
+    height: 48px
+}
+.produtos-shortcut {
+    background-image: url(images/icon/produtos.png);
+    width: 48px;
+    height: 48px
+}
+.acesso-menu {
+    background-image: url(images/icon/acesso-menu.png) !important;
+    width: 16px !important;
+    height: 16px !important;
+}
+.fornecedor-menu {
+    background-image: url(images/icon/fornecedor-menu.png) !important;
+    width: 16px !important;
+    height: 16px !important;
+}
+.prontuario-menu {
+    background-image: url(images/icon/prontuario-menu.png) !important;
+    width: 16px !important;
+    height: 16px !important;
+}
+.paciente-menu {
+    background-image: url(images/icon/paciente-menu.png) !important;
+    width: 16px !important;
+    height: 16px !important;
+}
+.unidade-menu {
+    background-image: url(images/icon/unidade-medida-menu.png) !important;
+    width: 16px !important;
+    height: 16px !important;
+}
+.lote-menu {
+	background-image: url(images/icon/lote-menu.png) !important;
+    width: 16px !important;
+    height: 16px !important;
+}
+.notafiscal-menu {
+	background-image: url(images/icon/nota-fiscal-menu.png) !important;
+    width: 16px !important;
+    height: 16px !important;
+}
+.produtos-menu {
+	background-image: url(images/icon/produtos-menu.png) !important;
+    width: 16px !important;
+    height: 16px !important;
+}
+.config-menu {
+	background-image: url(images/icon/config-menu.png) !important;
+    width: 16px !important;
+    height: 16px !important;
+}
+.sair-menu {
+	background-image: url(images/icon/sair-menu.png) !important;
+    width: 16px !important;
+    height: 16px !important;
+}

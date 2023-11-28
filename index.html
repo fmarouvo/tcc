@@ -1,0 +1,83 @@
+<!DOCTYPE HTML>
+<html manifest="">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8">
+
+    <title>Sistema</title>
+    <link rel="stylesheet" href="resources/desktop.css"/>
+    <link rel="stylesheet" href="resources/default.css"/>
+    <link rel="stylesheet" href="resources/loader.css"/>
+
+    <script>
+		var MyDesktop = {
+			getCompany:{}
+		};
+		var _url = document.URL;
+		var _existsParam = _url.indexOf('p=');
+		var _existsPort = _url.lastIndexOf(':');
+		var _examples = _url.lastIndexOf('examples/');
+		var _param = _url.substr((_existsParam + 2), (_url.length - _existsParam));
+		var _port = _url.substr((_existsPort + 1), 4);
+		var _lastBar = _url.lastIndexOf('/');
+		var _host = _url.substr(0,_lastBar)+'/';
+		
+        function getURL() {
+			var _dev = '';
+
+
+			var _lastBar = _url.lastIndexOf('/');
+			var _workDirectory = _url.substr(0,_lastBar);
+			return _workDirectory+'/';
+		}
+        
+		function getTotalPage(){
+			return 25;
+		}
+        var _existsParam = _url.indexOf('p=');
+        var _param = _url.substr((_existsParam + 2), (_url.length - _existsParam));
+        var _position = document.URL.indexOf('/', 10);
+        var _host = document.URL.substr(0, _position);
+    </script>
+    <script id="microloader" type="text/javascript" src="bootstrap.js"></script>
+</head>
+<body>
+<div id="loading" class="loading">
+    <div id="loading-container">
+        <div class="logo" style="width:400px; height: 400px; top: 100px"></div>
+        <div id="loading-bar" class="progress">
+            <div class="progress-bar">
+                <div id="loading-progress" class="progress-value" style="width: 0%;">
+                    <div class="animate"></div>
+                </div>
+            </div>
+        </div>
+        <div id="loading-message" class="message">
+            download...
+        </div>
+    </div>
+</div>
+
+<script>
+    done = false;
+    loaded = [];
+    function loading() {
+        var all = window.performance.getEntriesByType("resource");
+        for (var i in all) {
+            document.getElementById("loading-progress").style.cssText = 'width: ' + all.length * 10 + "%;";
+
+            var name = all[i].name;
+            name = name.slice(name.lastIndexOf('/') + 1, name.lastIndexOf('.'));
+            document.getElementById("loading-message").innerHTML = name;
+        }
+
+        if (!done) return;
+
+        document.getElementById("loading-progress").style.cssText = 'width: 100%;';
+        clearInterval(loadingInterval);
+    }
+    loading();
+    loadingInterval = setInterval(loading, 1);
+</script>
+</body>
+</html>

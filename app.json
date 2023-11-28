@@ -1,0 +1,64 @@
+{
+  "name": "FacilDesktop",
+  "version": "1.0.0.60",
+  "indexHtmlPath": "index.html",
+  "classpath": "${app.dir}/app",
+  "overrides": "${app.dir}/overrides",
+  "framework": "ext",
+  "theme": "ext-theme-crisp",
+  "requires": [
+  ],
+  "sass": {
+    "namespace": "FacilDesktop"
+  },
+  "js": [
+    {
+      "path": "${framework.dir}/build/ext-all-rtl.js"
+    },
+    {
+      "path": "app.js",
+      "bundle": true
+    }
+  ],
+  "css": [
+    {
+      "path": "bootstrap.css",
+      "bootstrap": true
+    }
+  ],
+  "production": {
+  },
+  "testing": {
+  },
+  "development": {
+  },
+  "bootstrap": {
+    "base": "${app.dir}",
+    "manifest": "bootstrap.json",
+    "microloader": "bootstrap.js",
+    "css": "bootstrap.css"
+  },
+  "output": {
+    "base": "${workspace.build.dir}/${build.environment}/${app.name}"
+  },
+  "appCache": {
+    "cache": [
+      "index.html"
+    ],
+    "network": [
+      "*"
+    ],
+    "fallback": []
+  },
+  "resources": [
+	"cadastro",
+	"class",
+    "php",
+	"resources"
+  ],
+  "ignore": [
+    "(^|/)CVS(/?$|/.*?$)"
+  ],
+  "archivePath": "archive",
+  "id": "f5f69776-b506-4122-b3c4-465fad3c0544"
+}
