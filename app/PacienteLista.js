@@ -43,7 +43,7 @@ Ext.define('FacilDesktop.PacienteLista', {
                 itemId: '_winPacienteLista',
                 alias: 'widget.pacienteListaAlias',
                 title: 'Pacientes Cadastrados',
-                width: 430,
+                width: 640,
                 height: 400,
                 x: 300,
                 y: 30,

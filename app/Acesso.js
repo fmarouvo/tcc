@@ -20,7 +20,7 @@ Ext.define('FacilDesktop.Acesso', {
 					acao: acao,
 					p:MyDesktop.getCompany.code,
 					usu_login: Ext.ComponentQuery.query('#_formAcesso #usu_login')[0].getValue(),
-					usu_senha: Ext.ComponentQuery.query('#_formAcesso #usu_senhaNova')[0].getValue(),
+					usu_senha: btoa(Ext.ComponentQuery.query('#_formAcesso #usu_senhaNova')[0].getValue()),
 					usu_email: Ext.ComponentQuery.query('#_formAcesso #usu_email')[0].getValue(),
 					per_codigo: Ext.ComponentQuery.query('#_formAcesso #usu_permissao')[0].getSelection().data.per_codigo,
 					per_name: Ext.ComponentQuery.query('#_formAcesso #usu_permissao')[0].getSelection().data.per_name
@@ -66,8 +66,8 @@ Ext.define('FacilDesktop.Acesso', {
 				var data = Ext.decode(_resposta.responseText);
                 Ext.ComponentQuery.query('#_formAcesso #usu_login')[0].setValue(data[0].usu_login);
                 Ext.ComponentQuery.query('#_formAcesso #usu_email')[0].setValue(data[0].usu_email);
-                Ext.ComponentQuery.query('#_formAcesso #usu_senhaNova')[0].setValue(data[0].usu_senha);
-                Ext.ComponentQuery.query('#_formAcesso #usu_senhaConfirm')[0].setValue(data[0].usu_senha);
+                Ext.ComponentQuery.query('#_formAcesso #usu_senhaNova')[0].setValue(atob(data[0].usu_senha));
+                Ext.ComponentQuery.query('#_formAcesso #usu_senhaConfirm')[0].setValue(atob(data[0].usu_senha));
 				Ext.ComponentQuery.query('#_formAcesso #usu_permissao')[0].store.load({
 					callback : function(_ret){
 						if(_ret.length > 0){
@@ -201,8 +201,7 @@ Ext.define('FacilDesktop.Acesso', {
 				],
 				listeners: {
 					afterRender: function() {
-						console.log("sem acesso" + MyDesktop.userPermission);
-						if(MyDesktop.userPermission == 'Normal') {
+						if(MyDesktop.userPermission != 'Administrador') {
 							setTimeout(function(){
 								alert = Ext.Msg.alert('Atenção','Você não tem acesso ao cadastro de usuários.',function(){
 								MyDesktop.fixMsgBox(_winAcesso);
