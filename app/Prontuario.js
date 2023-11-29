@@ -107,8 +107,6 @@ Ext.define('FacilDesktop.Prontuario', {
 						'prd_name': value.prd_name,
 						'prd_quantidade': value.prd_quantidade,
 						'dcb_codigo': value.dcb_codigo,
-						'dcb_discriminacao': value.dcb_discriminacao,
-						'dcb_apresentacao': value.dcb_apresentacao,
 						'lot_codigo': value.lot_codigo,
 						'lot_name': value.lot_name
 					}
@@ -159,7 +157,7 @@ Ext.define('FacilDesktop.Prontuario', {
                 itemId: '_winProntuario',
                 title:'Prontuário',
                 width:640,
-                height:560,
+                height:620,
 				overflowY: 'auto',
                 animCollapse:false,
                 constrainHeader:true,
@@ -386,17 +384,31 @@ Ext.define('FacilDesktop.Prontuario', {
 												padding:'10 0 0 0',
 												valueField: 'prd_codigo',
 												displayField: 'prd_name',
-												fields: ['prd_codigo', 'prd_name', 'dcb_codigo', 'dcb_discriminacao', 'dcb_apresentacao'],	// código e descrição a serem mostrados na combo **Uma posição obrigatória
+												fields: ['prd_codigo', 'prd_name', 'dcb_codigo', 'dcb_discriminacao', 'dcb_apresentacao'],
 												displayFields:['prd_name'],
 												store: {type: 'Produto'},
 												autoLoad: false,
-												/*listeners: {
-													'change': function (combo) {
-														if (combo.getSelection() && combo.getSelection().data.mun_uf_sigla && combo.getSelection().data.mun_uf_sigla != "") {
-															Ext.ComponentQuery.query('#_formProntuario #uf')[0].setValue(combo.getSelection().data.mun_uf_sigla);
+												hasParentStore: true,
+												listeners: {
+													change: function (combo) {
+														if (combo.getSelection() && combo.getSelection().data.prd_name && combo.getSelection().data.prd_name != "") {
+															Ext.Ajax.request({
+																url: getURL() + 'app/controller/lote.php',
+																params: {
+																	acao: 'lotePorProduto',
+																	prd_codigo: Ext.ComponentQuery.query('#_formProntuario #prt_produto')[0].getSelection().data.prd_codigo,
+																	p: MyDesktop.getCompany.code
+																},
+																success: function (_resposta, opts) {
+																	Ext.ComponentQuery.query('#_formProntuario #prt_lote')[0].reset();
+																	var dados = Ext.decode(_resposta.responseText);
+																	Ext.ComponentQuery.query('#_formProntuario #prt_lote')[0].store.loadData(dados);
+																	console.log(_resposta.responseText);
+																}
+															});
 														}
 													}
-												}*/
+												}
 											}),
 											{
 												xtype: 'button',
@@ -459,24 +471,10 @@ Ext.define('FacilDesktop.Prontuario', {
 												padding:'10 0 0 0',
 												valueField: 'lot_codigo',
 												displayField: 'lot_name',
-												fields: ['lot_codigo', 'lot_name'],	// código e descrição a serem mostrados na combo **Uma posição obrigatória
+												fields: ['lot_codigo', 'lot_name'],	
 												displayFields:['lot_validate','lot_name'],
 												store: {type: 'LoteSelecao'},
 												autoLoad: false,
-												/*renderer: function(val){
-													index = Ext.ComponentQuery.query('#_formProntuario #prt_lote')[0].store.findExact('lot_validate',val); 
-													if (index != -1){
-														rs = Ext.ComponentQuery.query('#_formProntuario #prt_lote')[0].store.getAt(index).data; 
-														return rs.display; 
-													}
-												}*/
-												/*listeners: {
-													'change': function (combo) {
-														if (combo.getSelection() && combo.getSelection().data.mun_uf_sigla && combo.getSelection().data.mun_uf_sigla != "") {
-															Ext.ComponentQuery.query('#_formProntuario #uf')[0].setValue(combo.getSelection().data.mun_uf_sigla);
-														}
-													}
-												}*/
 											}),
 											Ext.create('FacilDesktop.ux.form.NumberField', {
 												fieldLabel: 'Quantidade',

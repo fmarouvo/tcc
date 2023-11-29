@@ -45,10 +45,27 @@
 	}else{
 		$lot_barcode = "";
 	}
+	
+	if(isset($_REQUEST['prd_codigo']) && $_REQUEST['prd_codigo'] != ""){
+		$prd_codigo = strtoupper($_REQUEST['prd_codigo']);
+	}else{
+		$prd_codigo = "";
+	}
 
 	if($acao == "listar") {
 		$datapacket->setHost($TParams->getHost($host));
 		$filtro = '{"cod":"000061","params":[]}';
+
+		$datapacket->add($filtro);
+		$datapacket->debug = true;
+		$ret = $datapacket->open();
+		print_r(json_encode($ret));
+	
+	} else if($acao == "lotePorProduto") {
+		$datapacket->setHost($TParams->getHost($host));
+		$filtro = '{"cod":"000066","params":[
+			{"name":"prd_codigo","value":"'.$prd_codigo.'","type":"integer"}
+		]}';
 
 		$datapacket->add($filtro);
 		$datapacket->debug = true;
