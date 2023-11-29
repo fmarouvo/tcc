@@ -411,9 +411,9 @@ Ext.define('FacilDesktop.Application', {
 					{name:"Estoque",iconCls:"fornecedor-shortcut",module:"_modEstoque"},
 					{name:"Fornecedor",iconCls:"fornecedor-shortcut",module:"_modFornecedor"},
 					{name:"Lote",iconCls:"lote-shortcut",module:"_modLote"},
+					{name:"Produto",iconCls:"produtos-shortcut",module:"_modProduto"},
 					{name:"Nota Fiscal",iconCls:"notafiscal-shortcut",module:"_modNotaFiscal"},
 					{name:"Paciente",iconCls:"paciente-shortcut",module:"_modPaciente"},
-					{name:"Produto",iconCls:"produtos-shortcut",module:"_modProduto"},
 					{name:"Prontuario",iconCls:"prontuario-shortcut",module:"_modProntuario"},
 					{name:"Usuário do Sistema",iconCls:"acesso-shortcut",module:"_modAcesso"}
                 ]

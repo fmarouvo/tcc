@@ -105,7 +105,7 @@
 		$datapacket->add($filtro);
 		$ret = $datapacket->open();
 
-		echo "OK";
+		echo $datapacket->getLastQuery();
 	} else if($acao == "remove") {
 		$datapacket->setHost($TParams->getHost($host));
 		$datapacket->debug = true;

@@ -11,7 +11,7 @@ Ext.define('FacilDesktop.Login', {
             method: 'post',
             params: {
                 usu_login: Ext.ComponentQuery.query('#_formLogin #usu_login')[0].getValue(),
-                usu_senha: Ext.ComponentQuery.query('#_formLogin #usu_senha')[0].getValue()
+                usu_senha: btoa(Ext.ComponentQuery.query('#_formLogin #usu_senha')[0].getValue())
             },
             success: function (_resposta, opts) {
 				var _ret = Ext.decode(_resposta.responseText);
@@ -77,14 +77,7 @@ Ext.define('FacilDesktop.Login', {
 							MyDesktop.fixMsgBox(_winLogin);
 							MyDesktop.removeTaskbarButton('Entrar');
 							Ext.get('_modTaskBar').setStyle('visibility','hidden');
-							if(MyDesktop.cookieManager.getCookie('user')!=''){
-								//Ext.ComponentQuery.query('#usu_login')[0].setValue(atob(MyDesktop.cookieManager.getCookie('user')));
-								//Ext.ComponentQuery.query('#usu_senha')[0].focus();
-								Ext.ComponentQuery.query('#usu_login')[0].setValue("admin");
-								Ext.ComponentQuery.query('#usu_senha')[0].setValue("123");
-							}else{
-								Ext.ComponentQuery.query('#usu_login')[0].focus();
-							}
+							Ext.ComponentQuery.query('#usu_login')[0].focus();
 						},800);
                     },
 					beforeclose:function(){
