@@ -288,7 +288,7 @@ Ext.define('FacilDesktop.ux.form.ComboBox', {
 					var _fieldClass = (this.displayFieldsClass && this.displayFieldsClass[_i]) ? this.displayFieldsClass[_i] : 'color:#000; font-weight:normal';
 
 					// _displayText += ' - <span style="'+_fieldClass+'">{'+this.comboDisplayFields[_i]+'}</span>';
-					_displayText += ' - {'+this.comboDisplayFields[_i]+'}';
+					_displayText += '&nbsp;- {'+this.comboDisplayFields[_i]+'}';
 					/*if(_i>=2){
 						_displayText += ' - <span style="'+_fieldClass+'">({'+this.comboDisplayFields[_i]+'})</span>';
 					}else{

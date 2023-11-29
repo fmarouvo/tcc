@@ -56,7 +56,7 @@ Ext.define('FacilDesktop.Estoque', {
 		MyDesktop.waitMessage('Montando o pdf', 'Enviando...');
 		Ext.Ajax.request({
 			timeout:120000,
-			url: 'rel/relEstoqueProdutos.php',
+			url: 'app/controller/relEstoqueProdutos.php',
 			method: 'post',
 			params: MyDesktop.getModule('_modEstoque').filtroSelectionado,
 			success: function (_resposta, opts) {
@@ -236,8 +236,9 @@ Ext.define('FacilDesktop.Estoque', {
                                 columns: [
                                     {id: 'est_codigo', dataIndex: 'est_codigo', hidden: true},
                                     {id: 'prd_name', text: 'Produto', dataIndex: 'prd_name', flex: 1},
-                                    {id: 'dcb_codigo', text: 'Código DCB', dataIndex: 'dcb_codigo', flex: 1},
-                                    {id: 'dcb_discriminacao', text: 'Discriminação DCB', dataIndex: 'dcb_discriminacao', flex: 1},
+                                    {id: 'lot_name', text: 'Lote', dataIndex: 'lot_name', flex: 1},
+                                    {id: 'lot_manufacturing', text: 'Fabricação', dataIndex: 'lot_manufacturing', flex: 1},
+                                    {id: 'lot_validate', text: 'Validade', dataIndex: 'lot_validate', flex: 1},
 									{id: 'est_tipo', text: 'Tipo', dataIndex: 'est_tipo', renderer: function(_v){
 										if(_v == 0) { return "Saída"; }
 										return "Entrada";
