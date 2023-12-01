@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 01-Dez-2023 às 18:39
+-- Generation Time: 01-Dez-2023 às 18:41
 -- Versão do servidor: 5.7.14-log
 -- PHP Version: 5.6.25
 
@@ -541,7 +541,7 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`emp_codigo`, `usu_login`, `usu_senha`, `usu_email`, `per_codigo`, `per_name`, `isActive`) VALUES
-('HOSTWIDE', 'admin', 'MTIz', 'admin@fausto.dev', 4, 'Administrador', 1),
+('HOSTWIDE', 'admin', 'TWFyYWRvbmFAMTg=', 'admin@fausto.dev', 4, 'Administrador', 1),
 ('HOSTWIDE', 'enfermeiro', 'ZW5mZXJtZWlybw==', 'enfermeiro@fausto.dev', 2, 'Enfermeiro', 1),
 ('HOSTWIDE', 'normal', 'bm9ybWFs', 'normal@fausto.dev', 1, 'Normal', 1);
 
