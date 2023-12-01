@@ -12,6 +12,7 @@
  */
 Ext.define('FacilDesktop.ux.ShortcutModel', {
     extend: 'Ext.data.Model',
+	itemId: 'ShortcutModel',
     fields: [
        { name: 'name' },
        { name: 'iconCls' },

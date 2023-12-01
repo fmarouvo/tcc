@@ -28,7 +28,7 @@ Ext.define('FacilDesktop.Produto', {
 				},
 				success: function (_resposta, opts) {
 					if (_resposta.responseText == "OK") {
-						Ext.Msg.alert('Atenção','O produto "'+Ext.ComponentQuery.query('#_formProduto #prd_name')[0].getValue().toUpperCase()+'" foi cadastrado com sucesso.',function(){
+						Ext.Msg.alert('Atenção','O medicamento "'+Ext.ComponentQuery.query('#_formProduto #prd_name')[0].getValue().toUpperCase()+'" foi cadastrado com sucesso.',function(){
 							MyDesktop.getModule('_modProdutoLista').refreshView();
 							MyDesktop.fixMsgBox(_winProduto);
 							Ext.ComponentQuery.query('#_formProduto #prd_codigo')[0].setValue();
@@ -76,7 +76,7 @@ Ext.define('FacilDesktop.Produto', {
 		if(!Ext.ComponentQuery.query('#_winProduto')[0]){
             _winProduto = this.app.getDesktop().createWindow({
                 itemId: '_winProduto',
-                title:'Produto',
+                title:'Medicamento',
                 width:430,
                 height:160,
                 animCollapse:false,

@@ -151,7 +151,7 @@ Ext.define('FacilDesktop.NotaFiscal', {
                 itemId: '_winNotaFiscal',
                 title:'Nota Fiscal',
                 width:640,
-                height:440,
+                height:360,
                 animCollapse:false,
                 constrainHeader:true,
 				renderTo: Ext.getBody(),
@@ -235,13 +235,13 @@ Ext.define('FacilDesktop.NotaFiscal', {
 										header: false,
 										itemId: 'ntf_produtosSelecionados',
 										width: 620,
-										height: 200,
+										height: 120,
 										columnLines:true,
 										store: {type: 'ProdutoSelecionado'},
 										style:{borderTop:'1px solid #C1C1C1'},
 										columns: [
 											{dataIndex: 'prd_numero', hidden: true},
-											{text: 'prd_name', dataIndex: 'prd_name', flex: 1},
+											{text: 'Medicamento', dataIndex: 'prd_name', flex: 1},
 											{text: 'Quantidade', dataIndex: 'prd_quantidade'},
 											{text: 'Lote', dataIndex: 'lot_name'},
 											{
@@ -276,11 +276,11 @@ Ext.define('FacilDesktop.NotaFiscal', {
 										defaultType: 'textfield',
 										items: [
 											Ext.create('FacilDesktop.ux.form.ComboBox', {
-												fieldLabel: 'Produto',
+												fieldLabel: 'Medicamento',
 												itemId: 'ntf_produto',
 												name: 'ntf_produto',
 												width: 585,
-												labelWidth: 50,
+												labelWidth: 80,
 												padding:'10 0 0 0',
 												valueField: 'prd_codigo',
 												displayField: 'prd_name',

@@ -126,10 +126,11 @@
 		$datapacket->add($filtro);
 		$ret = $datapacket->debug = true;
 		$ret = $datapacket->open();
-		$obj->debug=$datapacket->getLastQuery();
+		
 		$datapacket->clear();
 		
 		$filtro=json_decode($filtro);
+		
 		$filtro->cod='000026';
 		$datapacket->add(json_encode($filtro));
 		$count = $datapacket->open(true);
@@ -137,8 +138,8 @@
 		
 		$obj->total=$total;
 		$obj->data=$ret;
+
 		$datapacket->clear();
-		
 		print_r(json_encode($obj));
 		
 	}
