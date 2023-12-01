@@ -42,7 +42,7 @@ Ext.define('FacilDesktop.ProdutoLista', {
             _winProdutoLista = desktop.createWindow({
                 itemId: '_winProdutoLista',
                 alias: 'widget.produtoListaAlias',
-                title: 'Produtos Cadastrados',
+                title: 'Medicamentos Cadastrados',
                 width: 800,
                 height: 400,
                 x: 300,
@@ -84,9 +84,9 @@ Ext.define('FacilDesktop.ProdutoLista', {
                                         items: [
                                             {
                                                 itemId: 'busca_produto',
-                                                fieldLabel: 'Produto',
+                                                fieldLabel: 'Medicamento',
                                                 width: 405,
-                                                labelWidth: 60,
+                                                labelWidth: 80,
                                                 selectOnFocus: true,
                                                 listeners: {
                                                     'change': function (combo) {
@@ -100,11 +100,12 @@ Ext.define('FacilDesktop.ProdutoLista', {
                                                                 params: {
 																	p: MyDesktop.getCompany.code,
 																	acao: "autocomplete",
-																	prd_name:  Ext.ComponentQuery.query('#busca_produto')[0].getValue()
+																	query:  Ext.ComponentQuery.query('#busca_produto')[0].getValue()
 																},
                                                                 success: function (_resposta, opts) {
+																	var dados = Ext.decode(_resposta.responseText);
                                                                     Ext.ComponentQuery.query('#gridProdutosCadastradas')[0].store.removeAll();
-                                                                    Ext.ComponentQuery.query('#gridProdutosCadastradas')[0].store.add(Ext.decode(_resposta.responseText));
+                                                                    Ext.ComponentQuery.query('#gridProdutosCadastradas')[0].store.add(dados.data);
                                                                 }
                                                             });
                                                         }
@@ -152,7 +153,7 @@ Ext.define('FacilDesktop.ProdutoLista', {
 										}
 										
 										if(columnIndex == 4) {
-											Ext.Msg.confirm('Atenção', "Tem certeza que deseja excluir esta produto?", function (_res) {
+											Ext.Msg.confirm('Atenção', "Tem certeza que deseja excluir este medicamento?", function (_res) {
 												if (_res == 'yes') {
 													Ext.Ajax.request({
 														url: getURL() + 'app/controller/produto.php',
@@ -163,13 +164,13 @@ Ext.define('FacilDesktop.ProdutoLista', {
 															prd_codigo: thisGrid.getSelection()[0].data.prd_codigo
 														},
 														success: function (_resposta, opts) {
-															Ext.Msg.alert('Atenção','A produto foi excluído com sucesso.',function(){
+															Ext.Msg.alert('Atenção','O medicamento foi excluído com sucesso.',function(){
 																MyDesktop.getModule('_modProdutoLista').fetchList();
 																MyDesktop.fixMsgBox(_winProduto);
 															});
 														},
 														failure: function (_resposta, opts) {
-															Ext.Msg.alert('Atenção','Houve um erro ao excluir a produto!',function(){
+															Ext.Msg.alert('Atenção','Houve um erro ao excluir o medicamento!',function(){
 																MyDesktop.fixMsgBox(_winProduto);
 															});
 														}

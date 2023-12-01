@@ -126,7 +126,7 @@ Ext.define('FacilDesktop.Application', {
 	],
 	
     user: 'contato@fausto.dev',
-	userPermission: 'farmacia',
+	userPermission: 'Normal',
     init: function () {
 
         Ext.Msg.buttonText = {
@@ -394,12 +394,33 @@ Ext.define('FacilDesktop.Application', {
         ];
         return _modules;
     },
+	
+	shortcutObject: {
+		fornecedor: {name:"Fornecedor",iconCls:"fornecedor-shortcut",module:"_modFornecedor"},
+		lote: {name:"Lote",iconCls:"lote-shortcut",module:"_modLote"},
+		medicamento: {name:"Medicamento",iconCls:"produtos-shortcut",module:"_modProduto"},
+		notaFiscal: {name:"Nota Fiscal",iconCls:"notafiscal-shortcut",module:"_modNotaFiscal"},
+		paciente: {name:"Paciente",iconCls:"paciente-shortcut",module:"_modPaciente"},
+		prontuario: {name:"Prontuario",iconCls:"prontuario-shortcut",module:"_modProntuario"},
+		estoque: {name:"Estoque",iconCls:"fornecedor-shortcut",module:"_modEstoque"},
+		usuarioDoSistema: {name:"Usuário do Sistema",iconCls:"acesso-shortcut",module:"_modAcesso"}
+	},
 
     getDesktopConfig: function () {
         var me = this, ret = me.callParent();
-
+		var menuData = [];
+		menuData = [
+			me.shortcutObject.fornecedor,
+			me.shortcutObject.lote,
+			me.shortcutObject.medicamento,
+			me.shortcutObject.notaFiscal,
+			me.shortcutObject.paciente,
+			me.shortcutObject.prontuario,
+			me.shortcutObject.estoque,
+			me.shortcutObject.usuarioDoSistema
+		];
+			
         return Ext.apply(ret, {
-            //cls: 'ux-desktop-black',
 
             contextMenuItems: [
                 {text: 'Alterar Configurações', handler: me.onSettings, scope: me}
@@ -407,16 +428,7 @@ Ext.define('FacilDesktop.Application', {
 
             shortcuts: Ext.create('Ext.data.Store', {
                 model: 'FacilDesktop.ux.ShortcutModel',
-                data: [
-					{name:"Estoque",iconCls:"fornecedor-shortcut",module:"_modEstoque"},
-					{name:"Fornecedor",iconCls:"fornecedor-shortcut",module:"_modFornecedor"},
-					{name:"Lote",iconCls:"lote-shortcut",module:"_modLote"},
-					{name:"Produto",iconCls:"produtos-shortcut",module:"_modProduto"},
-					{name:"Nota Fiscal",iconCls:"notafiscal-shortcut",module:"_modNotaFiscal"},
-					{name:"Paciente",iconCls:"paciente-shortcut",module:"_modPaciente"},
-					{name:"Prontuario",iconCls:"prontuario-shortcut",module:"_modProntuario"},
-					{name:"Usuário do Sistema",iconCls:"acesso-shortcut",module:"_modAcesso"}
-                ]
+                data: menuData
             }),
 
             wallpaper: 'resources/images/wallpapers/Blue-Sencha.jpg',

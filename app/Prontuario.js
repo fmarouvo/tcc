@@ -157,7 +157,7 @@ Ext.define('FacilDesktop.Prontuario', {
                 itemId: '_winProntuario',
                 title:'Prontuário',
                 width:640,
-                height:620,
+                height:440,
 				overflowY: 'auto',
                 animCollapse:false,
                 constrainHeader:true,
@@ -209,7 +209,7 @@ Ext.define('FacilDesktop.Prontuario', {
 												listeners: {
 													'change': function (combo) {
 														if (combo.getSelection() && combo.getSelection().data.pac_name && combo.getSelection().data.pac_name != "") {
-															Ext.ComponentQuery.query('#_formProntuario #prt_idade')[0].setValue(MyDesktop.getModule('_modProntuario').dataAniversario(combo.getSelection().data.pac_dataNascimento));
+															Ext.ComponentQuery.query('#_formProntuario #prt_idade')[0].setValue("40");
 															Ext.ComponentQuery.query('#_formProntuario #prt_peso')[0].setValue(combo.getSelection().data.pac_peso);
 															Ext.ComponentQuery.query('#_formProntuario #prt_telefone')[0].setValue(combo.getSelection().data.pac_telefone);
 															Ext.ComponentQuery.query('#_formProntuario #prt_endereco')[0].setValue(combo.getSelection().data.pac_endereco);
@@ -320,7 +320,7 @@ Ext.define('FacilDesktop.Prontuario', {
 												itemId:'prt_descr',
 												name:'prt_descr',
 												width: 605,
-												height: 150,
+												height: 70,
 												emptyText:'Medicações do paciente',
 												fieldStyle:{
 													textTransform:'uppercase'
@@ -332,7 +332,7 @@ Ext.define('FacilDesktop.Prontuario', {
 										header: false,
 										itemId: 'prt_produtosSelecionados',
 										width: 605,
-										height: 200,
+										height: 100,
 										columnLines:true,
 										store: {type: 'ProdutoSelecionado'},
 										style:{
@@ -341,7 +341,7 @@ Ext.define('FacilDesktop.Prontuario', {
 										},
 										columns: [
 											{dataIndex: 'prd_numero', hidden: true},
-											{text: 'prd_name', dataIndex: 'prd_name', flex: 1},
+											{text: 'Medicamento', dataIndex: 'prd_name', flex: 1},
 											{text: 'Quantidade', dataIndex: 'prd_quantidade'},
 											{text: 'Lote', dataIndex: 'lot_name'},
 											{
@@ -376,11 +376,11 @@ Ext.define('FacilDesktop.Prontuario', {
 										defaultType: 'textfield',
 										items: [
 											Ext.create('FacilDesktop.ux.form.ComboBox', {
-												fieldLabel: 'Produto',
+												fieldLabel: 'Medicamento',
 												itemId: 'prt_produto',
 												name: 'prt_produto',
 												width: 570,
-												labelWidth: 50,
+												labelWidth: 80,
 												padding:'10 0 0 0',
 												valueField: 'prd_codigo',
 												displayField: 'prd_name',
@@ -388,7 +388,6 @@ Ext.define('FacilDesktop.Prontuario', {
 												displayFields:['prd_name'],
 												store: {type: 'Produto'},
 												autoLoad: false,
-												hasParentStore: true,
 												listeners: {
 													change: function (combo) {
 														if (combo.getSelection() && combo.getSelection().data.prd_name && combo.getSelection().data.prd_name != "") {
@@ -445,7 +444,7 @@ Ext.define('FacilDesktop.Prontuario', {
 																	Ext.ComponentQuery.query('#_formProntuario #prt_lote')[0].reset();
 																	Ext.ComponentQuery.query('#_formProntuario #prt_quantidade')[0].setValue();
 																} else {
-																	Ext.Msg.alert('Atenção','A quantidade informada do produto não está disponível em estoque ('+ _resposta.responseText +') no lote selecionado.',function(){});
+																	Ext.Msg.alert('Atenção','A quantidade informada do medicamento não está disponível em estoque ('+ _resposta.responseText +') no lote selecionado.',function(){});
 																}
 																
 															}
@@ -522,7 +521,6 @@ Ext.define('FacilDesktop.Prontuario', {
 				],
 				listeners: {
 					afterRender: function() {
-						console.log("sem acesso" + MyDesktop.userPermission);
 						if(MyDesktop.userPermission == 'Normal') {
 							setTimeout(function(){
 								alert = Ext.Msg.alert('Atenção','Você não tem acesso ao cadastro de prontuários.',function(){
