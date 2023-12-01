@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 29-Nov-2023 às 02:19
+-- Generation Time: 01-Dez-2023 às 18:39
 -- Versão do servidor: 5.7.14-log
 -- PHP Version: 5.6.25
 
@@ -182,21 +182,11 @@ CREATE TABLE `estoque` (
 --
 
 INSERT INTO `estoque` (`est_codigo`, `prd_codigo`, `prd_name`, `est_quantidade`, `lot_codigo`, `lot_name`, `est_tipo`, `ntf_codigo`, `est_data`, `est_inicial`) VALUES
-(157, 40, 'PRODUTO DOIS', 33, 23, 'LOTE DOIS TESTE', 1, 54, '2021-05-01 00:00:00', 0),
-(156, 39, 'PRODUTO UM', 1, 22, 'LOTE TESTE 1', 0, 35, '2021-05-13 00:00:00', 0),
-(155, 39, 'PRODUTO UM', 2, 22, 'LOTE TESTE 1', 1, 53, '2021-05-13 00:00:00', 0),
-(158, 41, 'PRODUTO TRES', 12, 24, 'LOTE TRES', 1, 55, '2021-05-13 00:00:00', 0),
-(159, 41, 'PRODUTO TRES', 2, 24, 'LOTE TRES', 0, 36, '2021-05-13 00:00:00', 0),
-(160, 40, 'PRODUTO DOIS', 33, 23, 'LOTE DOIS TESTE', 2, 54, '2021-05-13 00:00:00', 0),
-(161, 41, 'PRODUTO TRES', 1, 24, 'LOTE TRES', 1, 56, '2021-05-13 00:00:00', 0),
-(162, 39, 'PRODUTO UM', 22, 25, 'LOTE QUATRO PRODUTO UM', 1, 57, '2021-05-13 00:00:00', 1),
-(163, 39, 'PRODUTO UM', 1, 25, 'LOTE QUATRO PRODUTO UM', 0, 37, '2021-05-13 00:00:00', 0),
-(164, 39, 'PRODUTO UM', 3, 25, 'LOTE QUATRO PRODUTO UM', 1, 58, '2021-05-13 00:00:00', 0),
-(165, 39, 'PRODUTO UM', 2, 22, 'LOTE TESTE 1', 2, 35, '2021-06-24 00:00:00', 0),
-(166, 41, 'PRODUTO TRES', 12, 24, 'LOTE TRES', 2, 36, '2021-06-24 00:00:00', 0),
-(167, 39, 'PRODUTO UM', 3, 25, 'LOTE QUATRO PRODUTO UM', 2, 57, '2023-04-24 00:00:00', 0),
-(168, 43, 'PRODUTO UUM', 10, 28, 'LOTE SETE', 1, 62, '2023-11-28 00:00:00', 1),
-(169, 43, 'PRODUTO UUM', 2, 28, 'LOTE SETE', 0, 39, '2023-11-28 00:00:00', 0);
+(173, 46, 'VACINA ASTRAZNCA', 1, 33, '219VCD288Z - OXFORD-ASTRAZNCA', 0, 40, '2023-11-29 00:00:00', 0),
+(174, 46, 'VACINA ASTRAZNCA', 5, 34, '219VCD281Z - OXFORD-ASTRAZNCA', 1, 66, '2023-11-30 00:00:00', 1),
+(170, 46, 'VACINA ASTRAZNCA', 100, 33, '219VCD288Z - OXFORD-ASTRAZNCA', 1, 63, '2023-11-05 00:00:00', 1),
+(171, 45, 'VACINA SINOVC', 80, 31, '220300 - SINOVC', 1, 64, '2023-11-28 00:00:00', 1),
+(172, 44, 'VACINA PFIZE', 75, 29, '2F1070A - PFIZE', 1, 65, '2023-11-27 00:00:00', 1);
 
 -- --------------------------------------------------------
 
@@ -241,11 +231,17 @@ CREATE TABLE `fornecedor` (
 
 INSERT INTO `fornecedor` (`for_codigo`, `for_name`, `for_cnpj`, `for_telefone`, `isActive`) VALUES
 (1, 'ASD SDA SADSA GF GHGFHFGHF DFGFGFD ', '', '', 0),
-(2, 'FORNECEDOR A', '12345678901234', '44 99999 9999', 1),
-(3, 'FORNECEDOR B', '45353535', '3454354', 1),
-(4, 'FORNECEDOR C', '', '', 1),
-(5, 'FORNECEDOR D', '', '', 1),
-(6, 'FORNECEDOR COM ARQUIVO', '423423423423242', '23424234234234', 1);
+(2, 'FORNECEDOR A', '12345678901234', '44 99999 9999', 0),
+(3, 'FORNECEDOR B', '45353535', '3454354', 0),
+(4, 'FORNECEDOR C', '', '', 0),
+(5, 'FORNECEDOR D', '', '', 0),
+(6, 'FORNECEDOR COM ARQUIVO', '423423423423242', '23424234234234', 0),
+(7, 'FORNECEDOR TCC', '10361580000104', '4132254556', 1),
+(8, 'FORNECEDOR UNICESUMAR', '66138317000105', '4433652535', 1),
+(9, 'FORNECEDOR SISTEMA WEB', '38855717000198', '4456521587', 1),
+(10, 'BUTANTN', '31575428000196', '43534534543', 1),
+(11, 'BIIONTECH', '81070714000178', '44252155141', 1),
+(12, 'FICRUZ', '26335185000189', '45453543334', 1);
 
 -- --------------------------------------------------------
 
@@ -271,9 +267,15 @@ INSERT INTO `lote` (`lot_codigo`, `lot_name`, `lot_manufacturing`, `lot_validate
 (23, 'LOTE DOIS TESTE', '2021-04-27', '2021-05-04', '1620764087', 2),
 (24, 'LOTE TRES', '2021-05-13', '2021-06-05', '1620907376', 2),
 (25, 'LOTE QUATRO PRODUTO UM', '2021-05-13', '2021-06-24', '1620940285', 2),
-(26, 'LOTE 1', '2023-11-28', '2023-12-24', '1701185701', 1),
-(27, 'LOTE DOIS', '2023-11-20', '2023-12-12', '1701185741', 1),
-(28, 'LOTE SETE', '2023-11-28', '2023-12-18', '1701197248', 1);
+(26, 'LOTE 1', '2023-11-28', '2023-12-24', '1701185701', 0),
+(27, 'LOTE DOIS', '2023-11-20', '2023-12-12', '1701185741', 0),
+(28, 'LOTE SETE', '2023-11-28', '2023-12-18', '1701197248', 0),
+(29, '2F1070A - PFIZE', '2022-04-30', '2022-04-04', '1701224751', 1),
+(30, '2F1071A - PFIZE', '2023-04-02', '2023-06-06', '1701224854', 1),
+(31, '220300 - SINOVC', '2023-08-31', '2023-10-02', '1701224882', 1),
+(32, '220258 - SINOVC', '2023-11-28', '2024-01-02', '1701224928', 1),
+(33, '219VCD288Z - OXFORD-ASTRAZNCA', '2023-11-29', '2024-01-09', '1701225094', 1),
+(34, '219VCD281Z - OXFORD-ASTRAZNCA', '2023-11-28', '2024-01-16', '1701225129', 1);
 
 -- --------------------------------------------------------
 
@@ -306,7 +308,11 @@ INSERT INTO `nota_fiscal` (`ntf_codigo`, `ntf_numero`, `for_codigo`, `for_name`,
 (59, '324234234234', 4, 'FORNECEDOR C', 'W3sicHJkX2NvZGlnbyI6NDMsInByZF9uYW1lIjoiUFJPRFVUTyBVVU0iLCJkY2JfY29kaWdvIjoiNzc3IiwiZGNiX2Rpc2NyaW1pbmFjYW8iOiIiLCJkY2JfYXByZXNlbnRhY2FvIjoiIiwicHJkX3F1YW50aWRhZGUiOjEwLCJsb3RfY29kaWdvIjoyOCwibG90X25hbWUiOiJMT1RFIFNFVEUiLCJpZCI6IkZhY2lsRGVza3RvcC5tb2RlbC5Qcm9kdXRvU2VsZWNpb25hZG8tMSJ9XQ==', '2023-11-28', 1),
 (60, '324234234234', 4, 'FORNECEDOR C', 'W3sicHJkX2NvZGlnbyI6NDMsInByZF9uYW1lIjoiUFJPRFVUTyBVVU0iLCJkY2JfY29kaWdvIjoiNzc3IiwiZGNiX2Rpc2NyaW1pbmFjYW8iOiIiLCJkY2JfYXByZXNlbnRhY2FvIjoiIiwicHJkX3F1YW50aWRhZGUiOjEwLCJsb3RfY29kaWdvIjoyOCwibG90X25hbWUiOiJMT1RFIFNFVEUiLCJpZCI6IkZhY2lsRGVza3RvcC5tb2RlbC5Qcm9kdXRvU2VsZWNpb25hZG8tMSJ9XQ==', '2023-11-28', 1),
 (61, '324234234234', 4, 'FORNECEDOR C', 'W3sicHJkX2NvZGlnbyI6NDMsInByZF9uYW1lIjoiUFJPRFVUTyBVVU0iLCJkY2JfY29kaWdvIjoiNzc3IiwiZGNiX2Rpc2NyaW1pbmFjYW8iOiIiLCJkY2JfYXByZXNlbnRhY2FvIjoiIiwicHJkX3F1YW50aWRhZGUiOjEwLCJsb3RfY29kaWdvIjoyOCwibG90X25hbWUiOiJMT1RFIFNFVEUiLCJpZCI6IkZhY2lsRGVza3RvcC5tb2RlbC5Qcm9kdXRvU2VsZWNpb25hZG8tMSJ9XQ==', '2023-11-28', 1),
-(62, '324234234234', 4, 'FORNECEDOR C', 'W3sicHJkX2NvZGlnbyI6NDMsInByZF9uYW1lIjoiUFJPRFVUTyBVVU0iLCJkY2JfY29kaWdvIjoiNzc3IiwiZGNiX2Rpc2NyaW1pbmFjYW8iOiIiLCJkY2JfYXByZXNlbnRhY2FvIjoiIiwicHJkX3F1YW50aWRhZGUiOjEwLCJsb3RfY29kaWdvIjoyOCwibG90X25hbWUiOiJMT1RFIFNFVEUiLCJpZCI6IkZhY2lsRGVza3RvcC5tb2RlbC5Qcm9kdXRvU2VsZWNpb25hZG8tMSJ9XQ==', '2023-11-28', 1);
+(62, '324234234234', 4, 'FORNECEDOR C', 'W3sicHJkX2NvZGlnbyI6NDMsInByZF9uYW1lIjoiUFJPRFVUTyBVVU0iLCJkY2JfY29kaWdvIjoiNzc3IiwiZGNiX2Rpc2NyaW1pbmFjYW8iOiIiLCJkY2JfYXByZXNlbnRhY2FvIjoiIiwicHJkX3F1YW50aWRhZGUiOjEwLCJsb3RfY29kaWdvIjoyOCwibG90X25hbWUiOiJMT1RFIFNFVEUiLCJpZCI6IkZhY2lsRGVza3RvcC5tb2RlbC5Qcm9kdXRvU2VsZWNpb25hZG8tMSJ9XQ==', '2023-11-28', 1),
+(63, '000354812', 12, 'FICRUZ', 'W3sicHJkX2NvZGlnbyI6NDYsInByZF9uYW1lIjoiVkFDSU5BIEFTVFJBWk5DQSIsImRjYl9jb2RpZ28iOiIxODgwNjIiLCJkY2JfZGlzY3JpbWluYWNhbyI6IiIsImRjYl9hcHJlc2VudGFjYW8iOiIiLCJwcmRfcXVhbnRpZGFkZSI6MTAwLCJsb3RfY29kaWdvIjozMywibG90X25hbWUiOiIyMTlWQ0QyODhaIC0gT1hGT1JELUFTVFJBWk5DQSIsImlkIjoiRmFjaWxEZXNrdG9wLm1vZGVsLlByb2R1dG9TZWxlY2lvbmFkby0xIn1d', '2023-11-05', 1),
+(64, '000659521', 10, 'BUTANTN', 'W3sicHJkX2NvZGlnbyI6NDUsInByZF9uYW1lIjoiVkFDSU5BIFNJTk9WQyIsImRjYl9jb2RpZ28iOiIxNDM2NTMiLCJkY2JfZGlzY3JpbWluYWNhbyI6IiIsImRjYl9hcHJlc2VudGFjYW8iOiIiLCJwcmRfcXVhbnRpZGFkZSI6ODAsImxvdF9jb2RpZ28iOjMxLCJsb3RfbmFtZSI6IjIyMDMwMCAtIFNJTk9WQyIsImlkIjoiRmFjaWxEZXNrdG9wLm1vZGVsLlByb2R1dG9TZWxlY2lvbmFkby00In1d', '2023-11-28', 1),
+(65, '0000282454', 11, 'BIIONTECH', 'W3sicHJkX2NvZGlnbyI6NDQsInByZF9uYW1lIjoiVkFDSU5BIFBGSVpFIiwiZGNiX2NvZGlnbyI6IjA3MzIxMzMyIiwiZGNiX2Rpc2NyaW1pbmFjYW8iOiIiLCJkY2JfYXByZXNlbnRhY2FvIjoiIiwicHJkX3F1YW50aWRhZGUiOjc1LCJsb3RfY29kaWdvIjoyOSwibG90X25hbWUiOiIyRjEwNzBBIC0gUEZJWkUiLCJpZCI6IkZhY2lsRGVza3RvcC5tb2RlbC5Qcm9kdXRvU2VsZWNpb25hZG8tNSJ9XQ==', '2023-11-27', 1),
+(66, '000355846812', 12, 'FICRUZ', 'W3sicHJkX2NvZGlnbyI6NDYsInByZF9uYW1lIjoiVkFDSU5BIEFTVFJBWk5DQSIsImRjYl9jb2RpZ28iOiIxODgwNjIiLCJkY2JfZGlzY3JpbWluYWNhbyI6IiIsImRjYl9hcHJlc2VudGFjYW8iOiIiLCJwcmRfcXVhbnRpZGFkZSI6NSwibG90X2NvZGlnbyI6MzQsImxvdF9uYW1lIjoiMjE5VkNEMjgxWiAtIE9YRk9SRC1BU1RSQVpOQ0EiLCJpZCI6IkZhY2lsRGVza3RvcC5tb2RlbC5Qcm9kdXRvU2VsZWNpb25hZG8tMSJ9XQ==', '2023-11-30', 1);
 
 -- --------------------------------------------------------
 
@@ -330,9 +336,20 @@ CREATE TABLE `paciente` (
 --
 
 INSERT INTO `paciente` (`pac_codigo`, `pac_name`, `pac_dataNascimento`, `pac_peso`, `pac_telefone`, `pac_endereco`, `pac_cidade`, `isActive`) VALUES
-(9, 'PACIENTE UM', '1980-10-12', 71, '44 99969 4584', 'ANTONIO OCTAVIO SCRAMIM, 1119', 'MARINGA', 1),
-(10, 'PACIENTE DOIS', '2014-02-05', 56, '44 99999 9999', 'RUA JOAO MATIAS, 222', 'MARINGA', 1),
-(11, 'PACIENTE 3', '2020-10-05', 20, '44 99999 9985', 'RUA DAS FLORES, 25', 'MANDAGUACU', 1);
+(9, 'PACIENTE UM', '1980-10-12', 71, '44 99969 4584', 'ANTONIO OCTAVIO SCRAMIM, 1119', 'MARINGA', 0),
+(10, 'PACIENTE DOIS', '2014-02-05', 56, '44 99999 9999', 'RUA JOAO MATIAS, 222', 'MARINGA', 0),
+(11, 'PACIENTE 3', '2020-10-05', 20, '44 99999 9985', 'RUA DAS FLORES, 25', 'MANDAGUACU', 0),
+(12, 'FAUSTO CASTAGNARI MAROUVO', '2023-11-28', 75, '44999694684', 'RUA ANTONIO OCTAVIO SCRAMIM, 1119', 'MARINGA', 1),
+(13, 'ALINE VICTORIA NASSER COSTA', '2003-01-07', 49, '44 999642254', 'RUA ANTONIO OCTAVIO SCRAMIM, 1119', 'MARINGA', 1),
+(14, 'JOAQUIM MONTEIRO MAROUVO', '1948-11-18', 85, '', '', '', 1),
+(15, 'ZAIRA DE JESUS MAROUVO', '1951-05-20', 65, '', '', '', 1),
+(16, 'DOUGLAS CASTAGNARI MAROUVO', '1984-03-28', 85, '44 646494944', '', '', 1),
+(17, 'LEONARDO CASTAGNARI MAROUVO', '1987-10-01', 70, '44 669498464', '', '', 1),
+(18, 'CRISTIANE MASSA MAROUVO', '1981-01-17', 0, '', '', '', 1),
+(19, 'JESSYCA MARLISSA MOTA MAROUVO', '1990-10-10', 0, '', '', '', 1),
+(20, 'RUAN MAROUVO', '1970-01-01', 0, '', '', '', 1),
+(21, 'LIS MAROUVO', '1970-01-01', 0, '', '', '', 1),
+(22, 'ISIS MAROUVO', '1970-01-01', 0, '', '', '', 1);
 
 -- --------------------------------------------------------
 
@@ -375,11 +392,14 @@ CREATE TABLE `produto` (
 --
 
 INSERT INTO `produto` (`prd_codigo`, `prd_name`, `dcb_codigo`, `dcb_discriminacao`, `dcb_apresentacao`, `isActive`) VALUES
-(39, 'PRODUTO UM', '3346-1237-12', 'DISCRIMINACAO', 'APRESENTACAO', 1),
-(40, 'PRODUTO DOIS', '9237-2T61-73', 'DISCRI. MINA CAO', 'APRE SENTACAO', 1),
-(41, 'PRODUTO TRES', '5121-2363-82', 'DISCRIMIN ACAO', 'APRESENT ACAO', 1),
-(42, 'SDFSDFSDF', '', '', '', 1),
-(43, 'PRODUTO UUM', '777', '', '', 1);
+(39, 'PRODUTO UM', '3346-1237-12', 'DISCRIMINACAO', 'APRESENTACAO', 0),
+(40, 'PRODUTO DOIS', '9237-2T61-73', 'DISCRI. MINA CAO', 'APRE SENTACAO', 0),
+(41, 'PRODUTO TRES', '5121-2363-82', 'DISCRIMIN ACAO', 'APRESENT ACAO', 0),
+(42, 'SDFSDFSDF', '', '', '', 0),
+(43, 'PRODUTO UUM', '777', '', '', 0),
+(44, 'VACINA PFIZE', '07321332', '', '', 1),
+(45, 'VACINA SINOVC', '143653', '', '', 1),
+(46, 'VACINA ASTRAZNCA', '188062', '', '', 1);
 
 -- --------------------------------------------------------
 
@@ -402,11 +422,12 @@ CREATE TABLE `prontuario` (
 --
 
 INSERT INTO `prontuario` (`prt_codigo`, `prt_data`, `prt_descr`, `prt_produto`, `pac_codigo`, `pac_name`, `isActive`) VALUES
-(35, '2021-05-13', '', 'W3sicHJkX2NvZGlnbyI6MzksInByZF9uYW1lIjoiUFJPRFVUTyBVTSIsImRjYl9jb2RpZ28iOiIzMzQ2LTEyMzctMTIiLCJkY2JfZGlzY3JpbWluYWNhbyI6IkRJU0NSSU1JTkFDQU8iLCJkY2JfYXByZXNlbnRhY2FvIjoiQVBSRVNFTlRBQ0FPIiwicHJkX3F1YW50aWRhZGUiOjEsImxvdF9jb2RpZ28iOjIyLCJsb3RfbmFtZSI6IkxPVEUgVEVTVEUgMSIsImlkIjoiRmFjaWxEZXNrdG9wLm1vZGVsLlByb2R1dG9TZWxlY2lvbmFkby0xIn1d', 9, 'PACIENTE UM', 1),
-(36, '2021-05-13', '', 'W3sicHJkX2NvZGlnbyI6NDEsInByZF9uYW1lIjoiUFJPRFVUTyBUUkVTIiwiZGNiX2NvZGlnbyI6IjUxMjEtMjM2My04MiIsImRjYl9kaXNjcmltaW5hY2FvIjoiRElTQ1JJTUlOIEFDQU8iLCJkY2JfYXByZXNlbnRhY2FvIjoiQVBSRVNFTlQgQUNBTyIsInByZF9xdWFudGlkYWRlIjoyLCJsb3RfY29kaWdvIjoyNCwibG90X25hbWUiOiJMT1RFIFRSRVMiLCJpZCI6IkZhY2lsRGVza3RvcC5tb2RlbC5Qcm9kdXRvU2VsZWNpb25hZG8tNCJ9XQ==', 11, 'PACIENTE 3', 1),
-(37, '2021-05-13', '', 'W3sicHJkX2NvZGlnbyI6MzksInByZF9uYW1lIjoiUFJPRFVUTyBVTSIsImRjYl9jb2RpZ28iOiIzMzQ2LTEyMzctMTIiLCJkY2JfZGlzY3JpbWluYWNhbyI6IkRJU0NSSU1JTkFDQU8iLCJkY2JfYXByZXNlbnRhY2FvIjoiQVBSRVNFTlRBQ0FPIiwicHJkX3F1YW50aWRhZGUiOjEsImxvdF9jb2RpZ28iOjI1LCJsb3RfbmFtZSI6IkxPVEUgUVVBVFJPIFBST0RVVE8gVU0iLCJpZCI6IkZhY2lsRGVza3RvcC5tb2RlbC5Qcm9kdXRvU2VsZWNpb25hZG8tMyJ9XQ==', 10, 'PACIENTE DOIS', 1),
-(38, '2023-11-28', '', 'W3sicHJkX2NvZGlnbyI6NDMsInByZF9uYW1lIjoiUFJPRFVUTyBVVU0iLCJkY2JfY29kaWdvIjoiNzc3IiwiZGNiX2Rpc2NyaW1pbmFjYW8iOiIiLCJkY2JfYXByZXNlbnRhY2FvIjoiIiwicHJkX3F1YW50aWRhZGUiOjIsImxvdF9jb2RpZ28iOjI4LCJsb3RfbmFtZSI6IkxPVEUgU0VURSIsImlkIjoiRmFjaWxEZXNrdG9wLm1vZGVsLlByb2R1dG9TZWxlY2lvbmFkby0xIn1d', 11, 'PACIENTE 3', 1),
-(39, '2023-11-28', '', 'W3sicHJkX2NvZGlnbyI6NDMsInByZF9uYW1lIjoiUFJPRFVUTyBVVU0iLCJkY2JfY29kaWdvIjoiNzc3IiwiZGNiX2Rpc2NyaW1pbmFjYW8iOiIiLCJkY2JfYXByZXNlbnRhY2FvIjoiIiwicHJkX3F1YW50aWRhZGUiOjIsImxvdF9jb2RpZ28iOjI4LCJsb3RfbmFtZSI6IkxPVEUgU0VURSIsImlkIjoiRmFjaWxEZXNrdG9wLm1vZGVsLlByb2R1dG9TZWxlY2lvbmFkby0xIn1d', 11, 'PACIENTE 3', 1);
+(35, '2021-05-13', '', 'W3sicHJkX2NvZGlnbyI6MzksInByZF9uYW1lIjoiUFJPRFVUTyBVTSIsImRjYl9jb2RpZ28iOiIzMzQ2LTEyMzctMTIiLCJkY2JfZGlzY3JpbWluYWNhbyI6IkRJU0NSSU1JTkFDQU8iLCJkY2JfYXByZXNlbnRhY2FvIjoiQVBSRVNFTlRBQ0FPIiwicHJkX3F1YW50aWRhZGUiOjEsImxvdF9jb2RpZ28iOjIyLCJsb3RfbmFtZSI6IkxPVEUgVEVTVEUgMSIsImlkIjoiRmFjaWxEZXNrdG9wLm1vZGVsLlByb2R1dG9TZWxlY2lvbmFkby0xIn1d', 9, 'PACIENTE UM', 0),
+(36, '2021-05-13', '', 'W3sicHJkX2NvZGlnbyI6NDEsInByZF9uYW1lIjoiUFJPRFVUTyBUUkVTIiwiZGNiX2NvZGlnbyI6IjUxMjEtMjM2My04MiIsImRjYl9kaXNjcmltaW5hY2FvIjoiRElTQ1JJTUlOIEFDQU8iLCJkY2JfYXByZXNlbnRhY2FvIjoiQVBSRVNFTlQgQUNBTyIsInByZF9xdWFudGlkYWRlIjoyLCJsb3RfY29kaWdvIjoyNCwibG90X25hbWUiOiJMT1RFIFRSRVMiLCJpZCI6IkZhY2lsRGVza3RvcC5tb2RlbC5Qcm9kdXRvU2VsZWNpb25hZG8tNCJ9XQ==', 11, 'PACIENTE 3', 0),
+(37, '2021-05-13', '', 'W3sicHJkX2NvZGlnbyI6MzksInByZF9uYW1lIjoiUFJPRFVUTyBVTSIsImRjYl9jb2RpZ28iOiIzMzQ2LTEyMzctMTIiLCJkY2JfZGlzY3JpbWluYWNhbyI6IkRJU0NSSU1JTkFDQU8iLCJkY2JfYXByZXNlbnRhY2FvIjoiQVBSRVNFTlRBQ0FPIiwicHJkX3F1YW50aWRhZGUiOjEsImxvdF9jb2RpZ28iOjI1LCJsb3RfbmFtZSI6IkxPVEUgUVVBVFJPIFBST0RVVE8gVU0iLCJpZCI6IkZhY2lsRGVza3RvcC5tb2RlbC5Qcm9kdXRvU2VsZWNpb25hZG8tMyJ9XQ==', 10, 'PACIENTE DOIS', 0),
+(38, '2023-11-28', '', 'W3sicHJkX2NvZGlnbyI6NDMsInByZF9uYW1lIjoiUFJPRFVUTyBVVU0iLCJkY2JfY29kaWdvIjoiNzc3IiwiZGNiX2Rpc2NyaW1pbmFjYW8iOiIiLCJkY2JfYXByZXNlbnRhY2FvIjoiIiwicHJkX3F1YW50aWRhZGUiOjIsImxvdF9jb2RpZ28iOjI4LCJsb3RfbmFtZSI6IkxPVEUgU0VURSIsImlkIjoiRmFjaWxEZXNrdG9wLm1vZGVsLlByb2R1dG9TZWxlY2lvbmFkby0xIn1d', 11, 'PACIENTE 3', 0),
+(39, '2023-11-28', '', 'W3sicHJkX2NvZGlnbyI6NDMsInByZF9uYW1lIjoiUFJPRFVUTyBVVU0iLCJkY2JfY29kaWdvIjoiNzc3IiwiZGNiX2Rpc2NyaW1pbmFjYW8iOiIiLCJkY2JfYXByZXNlbnRhY2FvIjoiIiwicHJkX3F1YW50aWRhZGUiOjIsImxvdF9jb2RpZ28iOjI4LCJsb3RfbmFtZSI6IkxPVEUgU0VURSIsImlkIjoiRmFjaWxEZXNrdG9wLm1vZGVsLlByb2R1dG9TZWxlY2lvbmFkby0xIn1d', 11, 'PACIENTE 3', 0),
+(40, '2023-11-29', '', 'W3sicHJkX2NvZGlnbyI6NDYsInByZF9uYW1lIjoiVkFDSU5BIEFTVFJBWk5DQSIsImRjYl9jb2RpZ28iOiIxODgwNjIiLCJkY2JfZGlzY3JpbWluYWNhbyI6IiIsImRjYl9hcHJlc2VudGFjYW8iOiIiLCJwcmRfcXVhbnRpZGFkZSI6MSwibG90X2NvZGlnbyI6MzMsImxvdF9uYW1lIjoiMjE5VkNEMjg4WiAtIE9YRk9SRC1BU1RSQVpOQ0EiLCJpZCI6IkZhY2lsRGVza3RvcC5tb2RlbC5Qcm9kdXRvU2VsZWNpb25hZG8tMSJ9XQ==', 12, 'FAUSTO CASTAGNARI MAROUVO', 1);
 
 -- --------------------------------------------------------
 
@@ -469,13 +490,13 @@ INSERT INTO `template` (`query_cod`, `query_sql`, `aplicacao`) VALUES
 ('000063', 'select lot_codigo, lot_name, lot_manufacturing, lot_validate, lot_barcode from lote where lot_codigo = -}lot_codigo and isActive = 1 order by lot_validate , lot_codigo asc', 'lote.php'),
 ('000064', 'update lote set lot_name = -}lot_name, lot_manufacturing= -}lot_manufacturing, lot_validate = -}lot_validate, lot_barcode = -}lot_barcode where lot_codigo = -}lot_codigo ', 'lote.php'),
 ('000065', 'update lote set isActive = 0 where lot_codigo = -}lot_codigo', 'lote.php'),
-('000066', 'select a.lot_codigo, a.lot_name, DATE_FORMAT(b.lot_validate,"%d\\/%m\\/%Y") AS lot_validate from estoque a left join lote b on b.lot_codigo = a.lot_codigo where a.prd_codigo = -}prd_codigo and b.isActive = 1', 'lote.php'),
+('000066', 'select a.lot_codigo, a.lot_name, DATE_FORMAT(b.lot_validate,"%d\\/%m\\/%Y") AS lot_validate from estoque a left join lote b on b.lot_codigo = a.lot_codigo where a.prd_codigo = -}prd_codigo and a.est_tipo = 1 and b.isActive = 1 order by b.lot_validate asc', 'lote.php'),
 ('000071', 'select tip_codigo, tip_name from tipo where isActive = 1', 'tipo.php'),
 ('000081', 'select per_codigo, per_name from permissao where isActive = 1', 'permissao.php'),
 ('000090', 'insert into usuario (emp_codigo, usu_login, usu_senha, usu_email, per_codigo, per_name) values ("HOSTWIDE", -}usu_login, -}usu_senha, -}usu_email, -}per_codigo, -}per_name)', 'acesso.php'),
 ('000091', 'select emp_codigo, usu_login, usu_senha, usu_email, per_codigo, per_name from usuario where isActive = 1 order by usu_login asc', 'acesso.php'),
 ('000092', 'select emp_codigo, usu_login, usu_senha, usu_email, per_codigo, per_name from usuario where usu_login like \'%-}usu_login%\' and isActive = 1 order by usu_login asc', 'acesso.php'),
-('000093', 'select emp_codigo, usu_login, usu_senha, usu_email, per_codigo, per_name from usuario where usu_login= -}usu_login', 'acesso.php'),
+('000093', 'select emp_codigo, usu_login, usu_senha, usu_email, per_codigo, per_name from usuario where usu_login= -}usu_login and isActive = 1', 'acesso.php'),
 ('000094', 'update usuario set usu_login = -}usu_login, usu_senha = -}usu_senha, usu_email = -}usu_email, per_codigo = -}per_codigo, per_name = -}per_name where usu_login = -}usu_login', 'acesso.php'),
 ('000095', 'update usuario set isActive = 0 where usu_login = -}usu_login', 'acesso.php'),
 ('000100', 'insert into estoque (prd_codigo, prd_name, est_quantidade, lot_codigo, lot_name, est_tipo, ntf_codigo, est_data, est_inicial) values (-}prd_codigo, -}prd_name, -}est_quantidade, -}lot_codigo, -}lot_name, 1, -}ntf_codigo, -}est_data, if( exists(select e.est_codigo from estoque e where e.prd_codigo = -}prd_codigo and lot_codigo = -}lot_codigo), \'0\', \'1\'))', 'nota_fiscal.php'),
@@ -484,7 +505,7 @@ INSERT INTO `template` (`query_cod`, `query_sql`, `aplicacao`) VALUES
 ('000103', 'select prt_codigo from prontuario order by prt_codigo desc limit 1', 'prontuario.php'),
 ('000104', 'delete from estoque where ntf_codigo = -}ntf_codigo', 'nota_fiscal.php, prontuario.php'),
 ('000105', 'select est_codigo, prd_codigo, prd_name,  est_quantidade, lot_codigo, lot_name, est_tipo, ntf_codigo, DATE_FORMAT(est_data,"%d\\/%m\\/%Y") AS est_data from estoque order by est_data, prd_name desc', 'estoque.php'),
-('000106', 'select a.est_codigo, a.prd_codigo, a.prd_name, a.est_quantidade, a.est_tipo, a.ntf_codigo, DATE_FORMAT(a.est_data,"%d\\/%m\\/%Y") AS est_data, b.lot_name, b.lot_manufacturing, b.lot_validate from estoque a left join lote b on b.lot_codigo = a.lot_codigo where prd_name like \'%-}prd_name%\' and est_tipo in (-}est_tipo) and est_data between -}est_dtinicial and -}est_dtfinal order by est_data, prd_name desc', 'estoque.php'),
+('000106', 'select a.est_codigo, a.prd_codigo, a.est_quantidade, a.est_tipo, a.ntf_codigo, DATE_FORMAT(a.est_data,"%d\\/%m\\/%Y") AS est_data, b.lot_name, b.lot_manufacturing, b.lot_validate, c.prd_name from estoque a left join lote b on b.lot_codigo = a.lot_codigo left join produto c on c.isActive = 1 where c.prd_name like \'%-}prd_name%\' and est_tipo in (-}est_tipo) and est_data between -}est_dtinicial and -}est_dtfinal and a.prd_name like \'%-}prd_name%\' group by est_codigo, est_tipo order by est_data, prd_name desc\r\n', 'estoque.php'),
 ('000110', 'insert into prontuario (prt_data, prt_descr, prt_produto, pac_codigo, pac_name, isActive) values (-}prt_data, -}prt_descr, -}prt_produto, -}pac_codigo, -}pac_name, 1)', 'prontuario.php'),
 ('000111', 'select prt_codigo, DATE_FORMAT(prt_data,"%d\\/%m\\/%Y") AS prt_data, prt_descr, prt_produto, pac_codigo, pac_name from prontuario where isActive = 1 order by prt_codigo, pac_name asc', 'prontuario.php'),
 ('000112', 'select prt_codigo, DATE_FORMAT(prt_data,"%d\\/%m\\/%Y") AS prt_data, prt_descr, prt_produto, pac_codigo, pac_name from prontuario where pac_name like \'%-}pac_name%\' and isActive = 1 order by prt_codigo asc', 'prontuario.php'),
@@ -520,10 +541,9 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`emp_codigo`, `usu_login`, `usu_senha`, `usu_email`, `per_codigo`, `per_name`, `isActive`) VALUES
-('HOSTWIDE', 'admin', '123', 'fausto@hostwide.com.br', 4, 'Administrador', 1),
-('HOSTWIDE', 'novo', '123', 'fatalk@gmail.com', 0, '', 1),
-('HOSTWIDE', 'teste', '123', 'teste@teste.com', 2, 'Enfermeiro', 1),
-('HOSTWIDE', 'tres', '123', 'dsad@asd.asd', 1, 'Normal', 1);
+('HOSTWIDE', 'admin', 'MTIz', 'admin@fausto.dev', 4, 'Administrador', 1),
+('HOSTWIDE', 'enfermeiro', 'ZW5mZXJtZWlybw==', 'enfermeiro@fausto.dev', 2, 'Enfermeiro', 1),
+('HOSTWIDE', 'normal', 'bm9ybWFs', 'normal@fausto.dev', 1, 'Normal', 1);
 
 -- --------------------------------------------------------
 
@@ -638,7 +658,7 @@ ALTER TABLE `usuario_modulo_empresa`
 -- AUTO_INCREMENT for table `estoque`
 --
 ALTER TABLE `estoque`
-  MODIFY `est_codigo` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=170;
+  MODIFY `est_codigo` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=175;
 --
 -- AUTO_INCREMENT for table `estoque_vencido`
 --
@@ -648,22 +668,22 @@ ALTER TABLE `estoque_vencido`
 -- AUTO_INCREMENT for table `fornecedor`
 --
 ALTER TABLE `fornecedor`
-  MODIFY `for_codigo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `for_codigo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 --
 -- AUTO_INCREMENT for table `lote`
 --
 ALTER TABLE `lote`
-  MODIFY `lot_codigo` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `lot_codigo` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 --
 -- AUTO_INCREMENT for table `nota_fiscal`
 --
 ALTER TABLE `nota_fiscal`
-  MODIFY `ntf_codigo` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
+  MODIFY `ntf_codigo` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=67;
 --
 -- AUTO_INCREMENT for table `paciente`
 --
 ALTER TABLE `paciente`
-  MODIFY `pac_codigo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `pac_codigo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 --
 -- AUTO_INCREMENT for table `permissao`
 --
@@ -673,12 +693,12 @@ ALTER TABLE `permissao`
 -- AUTO_INCREMENT for table `produto`
 --
 ALTER TABLE `produto`
-  MODIFY `prd_codigo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `prd_codigo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 --
 -- AUTO_INCREMENT for table `prontuario`
 --
 ALTER TABLE `prontuario`
-  MODIFY `prt_codigo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+  MODIFY `prt_codigo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 --
 -- Constraints for dumped tables
 --
